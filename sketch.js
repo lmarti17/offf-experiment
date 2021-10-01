@@ -101,9 +101,6 @@ class Sketch {
   }
 }
 
-const sketch = new Sketch();
-const myp5 = new p5();
-
 function setup() {
   myp5.background(0, 0, 255);
   myp5.createCanvas(myp5.windowWidth, myp5.windowHeight);
@@ -149,3 +146,12 @@ function mousePressed() {
 function mouseReleased() {
   sketch.updateOverlayAlpha(10);
 }
+
+const sketch = new Sketch();
+const myp5 = new p5();
+
+window.onload = function () {
+  document.getElementById("defaultCanvas0").addEventListener("click", () => {
+    sketch.updateColors();
+  });
+};
